@@ -23,6 +23,10 @@ help:
 	@echo "make bandit			- Apply bandit"
 	@echo "Tests:"
 	@echo "make test	    		- Unittest"
+	@echo "Coverage:"
+	@echo "make cov-clean			- Remove coverage directory"
+	@echo "make cov	    		- Run coverage"
+	@echo "make cov-html	    		- Build html coverage report"
 	@echo ""
 
 .PHONY: clean
@@ -30,7 +34,7 @@ clean:
 	@echo ""
 	@echo "*** clean ***"
 	@echo ""
-	(rm -rf venv; rm -rf *.ics; rm -rf *.pyc; find . -type d -name  "__pycache__" -exec rm -r {} +; rm -rf .mypy_cache; rm -rf .pytest_cache; rm -rf ./htmlcov;)
+	(rm -rf venv; rm -rf *.ics; rm -rf *.pyc; find . -type d -name  "__pycache__" -exec rm -r {} +; rm -rf .mypy_cache; rm -rf .pytest_cache; rm -rf ./htmlcov; rm -rf .coverage;)
 	@echo ""
 
 .PHONY: venv
@@ -89,3 +93,26 @@ test:
 	( pytest .)
 	@echo ""
 
+.PHONY: cov-clean
+cov-clean:
+	@echo ""
+	@echo "*** coverage-clean ***"
+	@echo ""
+	( rm -rf ./htmlcov; rm -rf .coverage; )
+	@echo ""
+
+.PHONY: cov
+cov:
+	@echo ""
+	@echo "*** coverage ***"
+	@echo ""
+	( pytest --cov )
+	@echo ""
+
+.PHONY: cov-html
+cov-html:
+	@echo ""
+	@echo "*** html report ***"
+	@echo ""
+	( pytest --cov --cov-report=html:htmlcov )
+	@echo ""
