@@ -14,6 +14,7 @@ help:
 	@echo "make help          		- this prints out the help for this makefile."
 	@echo "Clean:"
 	@echo "make clean	    		- DANGER - remove .py files, venv, coverage etc."
+	@echo "make venv	    		- create a virtual environment with requirements."
 	@echo "Code Formatting:"
 	@echo "make isort	    		- Apply isort"
 	@echo "make flake8	    		- Apply flake8"
@@ -29,7 +30,15 @@ clean:
 	@echo ""
 	@echo "*** clean ***"
 	@echo ""
-	(rm -rf venv; rm -rf *.ics; rm -rf *.pyc; find . -type d -name  "__pycache__" -exec rm -r {} +; rm -rf ./htmlcov;)
+	(rm -rf venv; rm -rf *.ics; rm -rf *.pyc; find . -type d -name  "__pycache__" -exec rm -r {} +; rm -rf .mypy_cache; rm -rf .pytest_cache; rm -rf ./htmlcov;)
+	@echo ""
+
+.PHONY: venv
+venv:
+	@echo ""
+	@echo "*** venv ***"
+	@echo ""
+	(python3 -m venv venv; source venv/bin/activate; pip install --upgrade pip; pip install -r requirements.txt;)
 	@echo ""
 
 .PHONY: isort
@@ -77,6 +86,6 @@ test:
 	@echo ""
 	@echo "*** unittest ***"
 	@echo ""
-	( pytest --no-cov .)
+	( pytest .)
 	@echo ""
 

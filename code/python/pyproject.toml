@@ -17,6 +17,7 @@ add-ignore = 'D100,D104,D107'
 python_version = "3.12"
 exclude = [
     "test_main.py",
+    "tests",
     "venv",
 ]
 # --strict
@@ -32,7 +33,7 @@ explicit_package_bases = true
 # --strict end
 
 [tool.bandit]
-exclude_dirs = ["tests","test_main.py"]
+exclude_dirs = ["tests","venv","test_main.py"]
 
 [tool.pytest.ini_options]
-addopts = "--no-cov --import-mode=importlib"
+addopts = "--import-mode=importlib"
