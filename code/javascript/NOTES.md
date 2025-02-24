@@ -60,11 +60,13 @@ npm init @eslint/config@latest          yarn create @eslint/config
 I had some problems getting this to work using the website instructions, but
 found adjusting the eslint.config.mjs file so that it says this helped fix
 problems:
+
 ```
 {languageOptions: { globals: globals.node }},       // was originally something else
 ```
 
 I then managed to get it to run using the following command:
+
 ```
 npx eslint *.js            yarn eslint *.js
 ```
