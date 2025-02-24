@@ -25,6 +25,9 @@ Adjust the package.json file so that it contains the following:
 
 ## Prettier
 
+Prettier Website:
+[Prettier](https://prettier.io/docs/install)
+
 ```
 npm install --save-dev --save-exact prettier        yarn add --dev --exact prettier
 ```
@@ -45,3 +48,23 @@ npx prettier . --write          yarn prettier . --write
 ```
 
 I added commands to package.json and the makefile to simplify this.
+
+## ESLint
+
+ESLint Website
+
+```
+npm init @eslint/config@latest          yarn create @eslint/config
+```
+
+I had some problems getting this to work using the website instructions, but
+found adjusting the eslint.config.mjs file so that it says this helped fix
+problems:
+```
+{languageOptions: { globals: globals.node }},       // was originally something else
+```
+
+I then managed to get it to run using the following command:
+```
+npx eslint *.js            yarn eslint *.js
+```

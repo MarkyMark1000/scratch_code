@@ -17,6 +17,7 @@ help:
 	@echo "make setup	    		- setup yarn for testing."
 	@echo "Code Formatting:"
 	@echo "make prettier	    		- prettier"
+	@echo "make eslint	    		- eslint"
 	@echo "Tests:"
 	@echo "make test	    		- Unittest"
 	@echo "Coverage:"
@@ -46,6 +47,14 @@ prettier:
 	@echo "*** prettier ***"
 	@echo ""
 	( yarn prettier )
+	@echo ""
+
+.PHONY: eslint
+eslint:
+	@echo ""
+	@echo "*** eslint ***"
+	@echo ""
+	( yarn eslint )
 	@echo ""
 
 .PHONY: test
