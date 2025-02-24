@@ -25,6 +25,30 @@ gets updated), so that the code can be stored.
   make test
   ```
 
+  There are also coverage reports and code formatting commands in some of the make files.
+
+  You then use standard git to create a new branch, commit changes to the branch etc.
+
+  Once finished, delete the unused branches.
+
+## JAVASCRIPT
+
+- Main code is expected to work around the main branch, so checkout this branch.
+- Go into the javascript directory using the terminal.   Clean and recreate the
+  environment using these commands:
+  ```
+  cd code/javascript
+  make clean
+  make setup
+  ```
+
+  Test to make sure it works correctly using this:
+  ```
+  make test
+  ```
+
+  There are also coverage reports and code formatting commands in some of the make files.
+
   You then use standard git to create a new branch, commit changes to the branch etc.
 
   Once finished, delete the unused branches.

@@ -174,3 +174,7 @@ cython_debug/
 .pypirc
 
 *.cloud
+
+# Javascript/Node
+coverage/
+node_modules/
