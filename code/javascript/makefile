@@ -15,6 +15,8 @@ help:
 	@echo "Clean:"
 	@echo "make clean	    		- DANGER - remove coverage and node_modules"
 	@echo "make setup	    		- setup yarn for testing."
+	@echo "Code Formatting:"
+	@echo "make prettier	    		- prettier"
 	@echo "Tests:"
 	@echo "make test	    		- Unittest"
 	@echo "Coverage:"
@@ -36,6 +38,14 @@ setup:
 	@echo "*** setup ***"
 	@echo ""
 	(yarn;)
+	@echo ""
+
+.PHONY: prettier
+prettier:
+	@echo ""
+	@echo "*** prettier ***"
+	@echo ""
+	( yarn prettier )
 	@echo ""
 
 .PHONY: test
