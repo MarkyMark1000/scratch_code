@@ -17,6 +17,7 @@ npm install -D vitest        yarn add -D vitest
 ```
 
 To get coverage working, I also had to install this:
+
 ```
 npm install @vitest/coverage-v8     OR yarn add @vitest/coverage-v8
 ```
@@ -37,6 +38,7 @@ Adjust the package.json file so that it contains the following:
 ## ecma
 
 To set the files as common js you can do any of the following:
+
 - use .mjs files
 - use --input-type "module" as an argument
 - use "type": "module", which is what I have done in this project

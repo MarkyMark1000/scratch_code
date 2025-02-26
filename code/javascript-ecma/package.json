@@ -2,10 +2,12 @@
   "type": "module",
   "scripts": {
     "test": "vitest",
-    "cov": "vitest run --coverage"
+    "cov": "vitest run --coverage",
+    "prettier": "prettier . --write"
   },
   "devDependencies": {
     "@vitest/coverage-v8": "3.0.7",
+    "prettier": "3.5.2",
     "vitest": "^3.0.7"
   }
 }
