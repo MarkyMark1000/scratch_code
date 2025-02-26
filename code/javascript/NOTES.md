@@ -3,6 +3,9 @@
 Jest Website:
 [Jest](https://jestjs.io/docs/getting-started)
 
+The Node Website tells you how to setup javascript for commonjs or ecma:
+[Node - commonjs and ecsma] (https://nodejs.org/docs/latest/api/esm.html#introduction)
+
 ## Setup
 
 I used yarn for this:
@@ -22,6 +25,13 @@ Adjust the package.json file so that it contains the following:
     "cov": "jest --coverage"
 },
 ```
+
+## CommonJS
+
+To set the files as common js you can do any of the following:
+- use .cjs files
+- use --input-type "commonjs" as an argument
+- use "type": "commonjs", which is what I have done in this project
 
 ## Prettier
 
