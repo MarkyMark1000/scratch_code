@@ -30,8 +30,8 @@ Adjust the package.json file so that it contains the following:
 ```
 "type": "module",
 "scripts": {
-    "test": "vitest",
-    "cov": "vitest run --coverage"
+    "test": "vitest run",
+    "cov": "vitest run --coverage",
 },
 ```
 
