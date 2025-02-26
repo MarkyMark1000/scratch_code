@@ -1,9 +1,9 @@
 # OVERVIEW OF SYSTEM SETUP
 
-We use Jest for unit testing CommonJS javascript files:
+We use vitest for testing ecma scripts:
 
-Jest Website:
-[Jest](https://jestjs.io/docs/getting-started)
+Vitest Website:
+[Vitest](https://vitest.dev/guide/)
 
 The Node Website tells you how to setup javascript for commonjs or ecma:
 [Node - commonjs and ecsma] (https://nodejs.org/docs/latest/api/esm.html#introduction)
@@ -13,7 +13,12 @@ The Node Website tells you how to setup javascript for commonjs or ecma:
 I used yarn for this:
 
 ```
-npm install --save-dev jest        yarn add --dev jest
+npm install -D vitest        yarn add -D vitest
+```
+
+To get coverage working, I also had to install this:
+```
+npm install @vitest/coverage-v8     OR yarn add @vitest/coverage-v8
 ```
 
 Next, create the main.js file and the main.test.js file to contain your code and your
@@ -22,19 +27,19 @@ unit test.
 Adjust the package.json file so that it contains the following:
 
 ```
-"type": "commonjs",
+"type": "module",
 "scripts": {
-    "test": "jest",
-    "cov": "jest --coverage"
+    "test": "vitest",
+    "cov": "vitest run --coverage"
 },
 ```
 
-## CommonJS
+## ecma
 
 To set the files as common js you can do any of the following:
-- use .cjs files
-- use --input-type "commonjs" as an argument
-- use "type": "commonjs", which is what I have done in this project
+- use .mjs files
+- use --input-type "module" as an argument
+- use "type": "module", which is what I have done in this project
 
 ## Prettier
 
