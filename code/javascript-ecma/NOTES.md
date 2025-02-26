@@ -16,8 +16,8 @@ I used yarn for this:
 npm install -D vitest        yarn add -D vitest
 ```
 
-To get coverage working, I also had to install this:
-
+To get coverage working, it tells you what you need to install.   I 
+had to add this:
 ```
 npm install @vitest/coverage-v8     OR yarn add @vitest/coverage-v8
 ```
